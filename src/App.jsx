@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import BrandsGrid from './components/BrandsGrid';
+import AboutContact from './components/AboutContact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-black text-white font-inter">
+      <Navbar />
+      <Hero />
+      <BrandsGrid />
+      <AboutContact />
+      <footer className="bg-black/90 border-t border-white/10">
+        <div className="container mx-auto px-6 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p>© {new Date().getFullYear()} AutoVibe • All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a href="#hero" className="hover:text-white">Back to Top</a>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
